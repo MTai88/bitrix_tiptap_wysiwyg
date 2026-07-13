@@ -131,10 +131,6 @@ npm run watch         # авто-пересборка
 | Редактор двоится | Поле обрабатывается и нашим JS, и штатным BX. Отключите штатный: `replace_uf_html = N` для конкретного свойства. |
 | На мобильных не работает тулбар | Тулбар свёрстан под десктоп. Добавьте медиа-запросы в `tiptap.css` под себя. |
 
-## Автор
-
-**Минсафаев Таир** — [github.com/MTai88/bitrix_tiptap_wysiwyg](https://github.com/MTai88/bitrix_tiptap_wysiwyg)
-
 ## Лицензия
 
 Код модуля — MIT. Tiptap — MIT ([tiptap.dev](https://tiptap.dev)). Используйте свободно.
