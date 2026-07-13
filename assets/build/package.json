@@ -1,0 +1,23 @@
+{
+  "name": "my-tiptap-bundle",
+  "version": "1.0.0",
+  "description": "Локальная сборка Tiptap 2.10 в IIFE-бандл для модуля my.tiptap (Bitrix)",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=iife --outfile=../js/tiptap.bundle.js --minify --sourcemap",
+    "build:dev": "esbuild src/main.js --bundle --format=iife --outfile=../js/tiptap.bundle.js --sourcemap",
+    "watch": "esbuild src/main.js --bundle --format=iife --outfile=../js/tiptap.bundle.js --sourcemap --watch"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.10.3",
+    "@tiptap/extension-image": "^2.10.3",
+    "@tiptap/extension-link": "^2.10.3",
+    "@tiptap/extension-placeholder": "^2.10.3",
+    "@tiptap/extension-text-align": "^2.10.3",
+    "@tiptap/extension-underline": "^2.10.3",
+    "@tiptap/starter-kit": "^2.10.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5"
+  }
+}

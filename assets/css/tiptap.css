@@ -1,0 +1,489 @@
+/* Tiptap WYSIWYG — основные стили + ImageUpload (как в Simple Editor) */
+
+.my-tt-wrap {
+    border: 1px solid #c6c6c6;
+    border-radius: 6px;
+    background: #fff;
+    margin: 4px 0 12px;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.my-tt-wrap:focus-within {
+    border-color: #4a87e6;
+    box-shadow: 0 0 0 2px rgba(74, 135, 230, 0.15);
+}
+
+/* Тулбар */
+.my-tt-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 6px;
+    background: #f5f7fa;
+    border-bottom: 1px solid #e1e5eb;
+    border-radius: 6px 6px 0 0;
+    align-items: center;
+}
+
+.my-tt-toolbar-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    flex: 1;
+}
+
+.my-tt-toolbar-right {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+    padding-left: 8px;
+    border-left: 1px solid #d0d7e0;
+}
+
+.my-tt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #2c3e50;
+    user-select: none;
+    font-size: 14px;
+}
+
+.my-tt-btn:hover {
+    background: #e8edf3;
+    border-color: #d0d7e0;
+}
+
+.my-tt-btn.is-active {
+    background: #4a87e6;
+    color: #fff;
+    border-color: #366dc4;
+}
+
+.my-tt-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    display: block;
+}
+
+.my-tt-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid #d0d7e0;
+    background: #fff;
+    color: #2c3e50;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.my-tt-btn-primary:hover {
+    background: #f5f7fa;
+    border-color: #4a87e6;
+    color: #4a87e6;
+}
+
+.my-tt-btn-primary svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.my-tt-sep {
+    display: inline-block;
+    width: 1px;
+    align-self: stretch;
+    margin: 4px 4px;
+    background: #d0d7e0;
+}
+
+/* Зона редактора */
+.my-tt-editor {
+    padding: 16px 18px;
+    min-height: 200px;
+    font: 14px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #222;
+    text-align: left;
+}
+
+.my-tt-editor *,
+.my-tt-editor p,
+.my-tt-editor h2,
+.my-tt-editor h3,
+.my-tt-editor blockquote,
+.my-tt-editor li,
+.my-tt-editor {
+    text-align: left;
+}
+
+.my-tt-editor .ProseMirror {
+    outline: none;
+    min-height: 180px;
+}
+
+.my-tt-editor .ProseMirror:focus {
+    outline: none;
+}
+
+.my-tt-editor .ProseMirror p {
+    margin: 0 0 0.8em;
+}
+
+.my-tt-editor .ProseMirror p:last-child {
+    margin-bottom: 0;
+}
+
+.my-tt-editor .ProseMirror h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 1em 0 0.4em;
+    line-height: 1.2;
+}
+
+.my-tt-editor .ProseMirror h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 1em 0 0.4em;
+    line-height: 1.3;
+}
+
+.my-tt-editor .ProseMirror blockquote {
+    border-left: 3px solid #c6c6c6;
+    padding-left: 14px;
+    margin: 0.8em 0;
+    color: #555;
+    font-style: italic;
+}
+
+.my-tt-editor .ProseMirror code {
+    background: #f0f2f5;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.92em;
+}
+
+.my-tt-editor .ProseMirror pre.my-tt-code {
+    background: #1e1e1e;
+    color: #f0f0f0;
+    padding: 12px 14px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.88em;
+    line-height: 1.5;
+}
+
+.my-tt-editor .ProseMirror pre.my-tt-code code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+.my-tt-editor .ProseMirror ul,
+.my-tt-editor .ProseMirror ol {
+    margin: 0.5em 0 0.8em;
+    padding-left: 1.6em;
+}
+
+.my-tt-editor .ProseMirror img.my-tt-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    display: block;
+    margin: 0.5em 0;
+}
+
+.my-tt-editor .ProseMirror img.ProseMirror-selected,
+.my-tt-editor .ProseMirror img.my-tt-img.ProseMirror-selected {
+    outline: 2px solid #4a87e6 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(74, 135, 230, 0.25) !important;
+}
+
+.my-tt-editor .ProseMirror img {
+    cursor: pointer;
+    transition: outline-color .15s, box-shadow .15s;
+}
+
+.my-tt-editor .ProseMirror a {
+    color: #4a87e6;
+    text-decoration: underline;
+}
+
+.my-tt-editor .ProseMirror hr {
+    border: 0;
+    border-top: 1px solid #d8dde4;
+    margin: 1.5em 0;
+}
+
+.my-tt-editor .ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
+
+/* ====== ImageUpload node (как в Tiptap Simple Editor) ====== */
+
+.my-tt-image-upload {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.my-tt-image-upload input[type="file"] {
+    display: none;
+}
+
+.my-tt-image-upload-drag-area {
+    padding: 1.5rem 1.25rem;
+    border: 1.5px dashed #d0d7e0;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    background: #fff;
+    user-select: none;
+}
+
+.my-tt-image-upload-drag-area:hover {
+    border-color: #a8b3c0;
+    background: #fafbfc;
+}
+
+.my-tt-image-upload-drag-area.is-drag-active,
+.my-tt-image-upload-drag-area.is-drag-over {
+    border-color: #4a87e6;
+    background: #f0f7ff;
+}
+
+.my-tt-image-upload-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
+    user-select: none;
+}
+
+.my-tt-image-upload-dropzone {
+    position: relative;
+    width: 50px;
+    height: 60px;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.my-tt-image-upload-icon-container {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    bottom: 0;
+    right: 0;
+    background-color: #4a87e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-tt-image-upload-icon-container svg {
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.my-tt-image-upload-dropzone-rect-primary {
+    position: absolute;
+    color: #e1e5eb;
+    top: 0;
+    left: 0;
+}
+
+.my-tt-image-upload-dropzone-rect-secondary {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    bottom: 0;
+    color: #d0d7e0;
+}
+
+.my-tt-image-upload-text {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: normal;
+}
+
+.my-tt-image-upload-text em {
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.my-tt-image-upload-subtext {
+    color: #6b7785;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 0.75rem;
+}
+
+.my-tt-image-upload-previews {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.my-tt-image-upload-preview {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #d0d7e0;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.my-tt-image-upload-file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.my-tt-image-upload-file-icon {
+    width: 28px;
+    height: 28px;
+    background: #4a87e6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-tt-image-upload-file-icon svg {
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.my-tt-image-upload-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #4a87e6;
+    transition: width 200ms ease-out;
+}
+
+.my-tt-image-upload-progress-text {
+    font-size: 0.75rem;
+    color: #4a87e6;
+    font-weight: 600;
+}
+
+.tiptap.ProseMirror-focused .ProseMirror-selectednode .my-tt-image-upload-drag-area {
+    border-color: #4a87e6;
+    background: #f0f7ff;
+}
+
+/* Тёмная тема Битрикса */
+body.bx-core-admin-dark .my-tt-wrap {
+    background: #1f1f1f;
+    border-color: #3a3a3a;
+}
+
+body.bx-core-admin-dark .my-tt-toolbar {
+    background: #2a2a2a;
+    border-bottom-color: #3a3a3a;
+}
+
+body.bx-core-admin-dark .my-tt-btn {
+    color: #d0d0d0;
+}
+
+body.bx-core-admin-dark .my-tt-btn:hover {
+    background: #3a3a3a;
+    border-color: #4a4a4a;
+}
+
+body.bx-core-admin-dark .my-tt-btn-primary {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #d0d0d0;
+}
+
+body.bx-core-admin-dark .my-tt-toolbar-right {
+    border-left-color: #3a3a3a;
+}
+
+body.bx-core-admin-dark .my-tt-editor {
+    color: #e0e0e0;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-drag-area {
+    background: #1f1f1f;
+    border-color: #3a3a3a;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-drag-area:hover {
+    background: #252525;
+    border-color: #4a4a4a;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-drag-area.is-drag-over,
+body.bx-core-admin-dark .my-tt-image-upload-drag-area.is-drag-active {
+    border-color: #4a87e6;
+    background: #2a2a2a;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-text {
+    color: #e0e0e0;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-subtext {
+    color: #888;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-preview {
+    background: #1f1f1f;
+    border-color: #3a3a3a;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-dropzone-rect-primary {
+    color: #2a2a2a;
+}
+
+body.bx-core-admin-dark .my-tt-image-upload-dropzone-rect-secondary {
+    color: #3a3a3a;
+}
